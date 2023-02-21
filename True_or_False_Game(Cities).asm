@@ -803,9 +803,9 @@ DisplayIntegerToStringLoop_Unreversed:
 NewLine:
   mov edx, 1                                                                   ;"newLineChar" length
   mov ecx, newLineChar                                                         ;Move the "newLineChar" variable value into "eax" register
-  mov ebx, 1	                                                                 ;File descriptor ("stdout")
-  mov eax, 4	                                                                 ;System call number ("sys_write") to print to the screen
-  int 0x80	                                                                   ;Invoke interrupt and OS check registers to print newLineChar
+  mov ebx, 1                                                                   ;File descriptor ("stdout")
+  mov eax, 4                                                                   ;System call number ("sys_write") to print to the screen
+  int 0x80                                                                     ;Invoke interrupt and OS check registers to print newLineChar
   ret
 
 ;Sub-Routine: To receive and discard additional char input
@@ -815,7 +815,7 @@ ClearLine:
   mov ecx, clean                                                               ;Move the characters entered by the user into the "clean" variable
   mov ebx, 2                                                                   ;"stdout" for reading from keyboard
   mov eax, 3                                                                   ;System call number ("sys_read") to read from keyboard
-  int 0x80	                                                                   ;Invoke interrupt and OS check registers, then read from keyboard
+  int 0x80                                                                     ;Invoke interrupt and OS check registers, then read from keyboard
   ret
 
 ;Sub-Routine: To display "End of Quiz" message and terminate program at end of quiz
